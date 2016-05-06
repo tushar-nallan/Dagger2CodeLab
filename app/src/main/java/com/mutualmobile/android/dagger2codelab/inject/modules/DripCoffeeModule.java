@@ -8,6 +8,8 @@ import com.mutualmobile.android.dagger2codelab.inject.Solar;
 import com.mutualmobile.android.dagger2codelab.inteface.Heater;
 import com.mutualmobile.android.dagger2codelab.inteface.Pump;
 
+import javax.inject.Singleton;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -17,6 +19,7 @@ import dagger.Provides;
 @Module
 public class DripCoffeeModule {
     @Provides
+    @Singleton
     CoffeeMaker provideCoffeeMaker(Heater heater, Pump pump) {
         return new CoffeeMaker(heater, pump);
     }
@@ -33,6 +36,7 @@ public class DripCoffeeModule {
 
     @Provides
     @Solar
+    @Singleton
     CoffeeMaker provideSolarCoffeeMaker(@Solar Heater heater, @Solar Pump pump) {
         return new CoffeeMaker(heater, pump);
     }

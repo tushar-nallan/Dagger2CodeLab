@@ -39,5 +39,15 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Log.e("Coffee", "Solar Coffee making FAILED");
         }
+
+        Log.d("Coffee", "Injected CoffeeMaker = " + coffeeMaker.hashCode());
+        Log.d("Coffee", "Injected @Solar CoffeeMaker = " + solarCoffeeMaker.hashCode());
+
+
+        CoffeeMaker normalCoffeeMaker = ((MyApplication) getApplication()).getComponent().getCoffeeMaker();
+        Log.d("Coffee", "getCoffeeMaker returned " + normalCoffeeMaker.hashCode());
+
+        CoffeeMaker solarCM = ((MyApplication) getApplication()).getComponent().getSolarCoffeeMaker();
+        Log.d("Coffee", "getSolarCoffeeMaker returned " + solarCM.hashCode());
     }
 }
