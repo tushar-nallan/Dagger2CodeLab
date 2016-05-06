@@ -4,13 +4,16 @@ package com.mutualmobile.android.dagger2codelab.concrete;
 import com.mutualmobile.android.dagger2codelab.inteface.Heater;
 import com.mutualmobile.android.dagger2codelab.inteface.Pump;
 
+import javax.inject.Inject;
+
 public class CoffeeMaker {
     private final Heater heater;
     private final Pump pump;
 
-    public CoffeeMaker() {
-        this.heater = new ElectricHeater();
-        this.pump = new Thermosiphon(heater);
+    @Inject
+    public CoffeeMaker(Heater heater, Pump pump) {
+        this.heater = heater;
+        this.pump = pump;
     }
 
     public Coffee makeCoffee() {
