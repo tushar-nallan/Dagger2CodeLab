@@ -10,7 +10,7 @@ The aim of this code lab is to add Dependency Injection to this app and explore 
 
 * Setup Dagger 2 in the app.
 
-* Add Dependency Injection
+* Add Dependency Injection for CoffeeMaker
 
 * Make CoffeeMaker singleton
 
